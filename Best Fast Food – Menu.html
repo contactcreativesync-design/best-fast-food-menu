@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Best Fast Food – Menu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#fff6d6;--card:#fffdf4;--ink:#2b1210;--mute:#6e4a44;--red:#d6323f;--yel:#f6d03a;--line:rgba(43,18,16,.16);--chip:#2b1210;--chipt:#f6d03a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b0d0c;--card:#2a1614;--ink:#fff1c9;--mute:#c9a79f;--line:rgba(255,241,201,.18);--chip:#f6d03a;--chipt:#2b1210}}
+:root[data-theme="dark"]{--bg:#1b0d0c;--card:#2a1614;--ink:#fff1c9;--mute:#c9a79f;--line:rgba(255,241,201,.18);--chip:#f6d03a;--chipt:#2b1210}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans","Segoe UI",Arial,sans-serif;line-height:1.4}
+h1,h2,h3,.disp{font-family:"Bowlby One",Impact,"Arial Black",sans-serif;font-weight:400}
+.hero{background:var(--yel);color:#2b1210;text-align:center;padding:44px 18px 64px;position:relative;overflow:hidden;clip-path:ellipse(120% 100% at 50% 0)}
+.hero h1{font-size:clamp(2.6rem,11vw,6rem);line-height:.95;letter-spacing:-1px}
+.hero h1 span{color:var(--red)}
+.hero .sub{margin-top:10px;font-weight:700;letter-spacing:.5px}
+.hero .tag{margin-top:6px;font-style:italic}
+.smile{width:170px;height:60px;margin:14px auto 0;display:block}
+.cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;background:#2b1210;color:#f6d03a;border:2px solid #2b1210}
+.btn.alt{background:transparent;color:#2b1210}
+.btn:focus-visible,nav a:focus-visible,.sz button:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.perks{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.perks span{background:rgba(43,18,16,.9);color:#f6d03a;padding:5px 12px;border-radius:999px;font-size:.82rem;font-weight:700}
+.bar{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top,0px) + 8px) 12px 8px}
+.bar-in{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+#q{width:100%;padding:11px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-weight:700;font-size:.88rem;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line)}
+nav a.on{background:var(--red);border-color:var(--red);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:8px 14px 40px}
+section{margin-top:34px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sh i{font-style:normal;font-size:1.9rem;background:var(--yel);width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex:none}
+.sh h2{font-size:clamp(1.5rem,5vw,2.2rem);color:var(--red);line-height:1}
+.sh small{display:block;color:var(--mute);font-size:.85rem;margin-top:4px;font-family:"DM Sans",sans-serif}
+.list{background:var(--card);border-radius:18px;padding:6px 18px;border:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:36px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.row b{font-weight:700}
+.pr{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.chip{background:var(--chip);color:var(--chipt);font-weight:700;padding:4px 11px;border-radius:8px;font-size:.92rem;white-space:nowrap}
+.chip small{opacity:.75;font-weight:500;margin-right:5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px;position:relative}
+.card.hot{border:2px solid var(--red)}
+.card .bd{position:absolute;top:-11px;right:16px;background:var(--red);color:#fff;font-size:.75rem;font-weight:700;padding:3px 12px;border-radius:999px}
+.card h3{font-size:1.3rem;color:var(--red)}
+.card ul{list-style:none;font-size:.92rem;color:var(--mute)}
+.card li:before{content:"✓ ";color:var(--red);font-weight:700}
+.card .big{margin-top:auto;font-family:"Bowlby One",Impact,sans-serif;font-size:1.9rem;padding-top:8px}
+.card .big small{font-size:.9rem;font-family:"DM Sans",sans-serif;color:var(--mute);margin-right:4px}
+.sz{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.sz button{font:inherit;font-weight:700;padding:9px 16px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.sz button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.pz{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:8px}
+.pz div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:700}
+.pz.sig div{background:var(--yel);color:#2b1210;border-color:transparent}
+.pz.sig .chip{background:#2b1210;color:#f6d03a}
+h4{margin:20px 0 10px;font-size:1.05rem}
+.tw{overflow-x:auto;background:var(--card);border-radius:14px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:340px;text-align:center}
+th,td{padding:10px;border-bottom:1px solid var(--line)}
+th{background:var(--chip);color:var(--chipt)}
+td:first-child,th:first-child{text-align:left;font-weight:700}
+.note{margin-top:12px;color:var(--mute);font-size:.88rem;text-align:center}
+.empty{display:none;text-align:center;padding:40px;color:var(--mute)}
+footer{background:#2b1210;color:#fff1c9;text-align:center;padding:40px 18px calc(40px + env(safe-area-inset-bottom,0px))}
+footer h3{color:var(--yel);font-size:1.6rem;margin-bottom:8px}
+footer .ph{font-family:"Bowlby One",Impact,sans-serif;font-size:1.5rem;margin:10px 0}
+footer .ph a{color:var(--yel);text-decoration:none}
+footer .cta{margin-top:16px}
+footer .btn{background:var(--yel);color:#2b1210;border-color:var(--yel)}
+footer .btn.alt{background:transparent;color:var(--yel)}
+@media(max-width:520px){.list{padding:4px 14px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>BEST <span>FAST</span> FOOD</h1>
+  <p class="sub">Pizza, Burger &amp; Fried Chicken</p>
+  <p class="tag">Little Place..... Big Taste</p>
+  <svg class="smile" viewBox="0 0 170 60" aria-hidden="true"><path d="M6 8 Q85 70 164 8" fill="none" stroke="#2b1210" stroke-width="9" stroke-linecap="round"/><path d="M110 30 Q128 56 146 34 Q134 28 110 30Z" fill="#d6323f"/></svg>
+  <div class="cta">
+    <a class="btn" href="tel:+923228600022">📞 Call to order</a>
+    <a class="btn alt" href="https://wa.me/923228600022">💬 WhatsApp</a>
+  </div>
+  <div class="perks"><span>🚚 Free home delivery</span><span>🔥 Fresh &amp; hot</span><span>🍕 Deals from Rs.500</span></div>
+</header>
+<div class="bar"><div class="bar-in">
+  <input id="q" type="search" placeholder="Search the menu… (zinger, pizza, wings)" aria-label="Search menu">
+  <nav id="nav" aria-label="Menu sections"></nav>
+</div></div>
+<main id="main"></main>
+<p class="empty" id="empty">No items match your search.</p>
+<footer>
+  <h3>Hungry? Order now!</h3>
+  <p>Free home delivery</p>
+  <div class="ph"><a href="tel:+923228600022">0322-8600022</a><br><a href="tel:+923228600011">0322-8600011</a></div>
+  <p>Best Fast Food, Hunter Purah Road, Gohadpurr, Sialkot</p>
+  <div class="cta"><a class="btn" href="tel:+923228600022">📞 Call now</a><a class="btn alt" href="https://wa.me/923228600022">💬 WhatsApp</a></div>
+</footer>
+<script>
+const L=[
+{id:"snacks",t:"Wraps & Snacks",e:"🌯",s:"Crispy, loaded and packed with flavour",i:[
+["Crunch Wrap",600],["Grilled Wrap",650],["Cheesy Wrap",700],["Chicken Cheese Stick",700],["Zinger Chicken Pcs",300],
+["Plain Fries",[["Small",250],["Large",450]]],["Loaded Fries",600],["Pizza Fries",700],["Best Special Fries",800],
+["Crispy Hot Wings",[["5 pcs",400],["10 pcs",800]]],["Oven Baked Wings",[["5 pcs",400],["10 pcs",800]]],["Chicken Nuggets",[["5 pcs",300],["10 pcs",550]]]]},
+{id:"shawarma",t:"Shawarma",e:"🥙",s:"Stuffed fresh to order",i:[
+["Chicken Shawarma Small",200],["Chicken Shawarma Large",300],["Chicken Shawarma Jumbo",400],["Chicken Cheese Shawarma",400],["Zinger Shawarma",400],["Special Chicken Shawarma",400],["Platter Shawarma",800],["Platter Cheese Shawarma",900],["Special Platter Shawarma",990]]},
+{id:"paratha",t:"Paratha Roll",e:"🫓",s:"Flaky paratha, juicy fillings",i:[
+["Chicken Paratha Roll",400],["Chicken Cheese Paratha Roll",450],["Zinger Paratha Roll",450],["Zinger Cheese Paratha Roll",500],["Tikka Paratha Roll",500],["Malai Paratha Roll",550],["Grill Paratha Roll",600]]}
+];
+const PZ=[{id:"pizza",sizes:['Small 9"','Medium 11"','Large 13"','XL 16"'],sig:[["Crown Crust","Chicken Malai","Creamy Donner","Kabab Crust"],[950,1300,1700,2340]],trad:[["Chicken Tikka","Fajita Chicken","Chicken Mexicana","Spicy Ranch","Veggie Lovers","Peri Peri Bite"],[900,1200,1500,2100]]}][0];
+const PD=[["Single Deal",["1 Small Pizza 9\"","1 French Fries","1 NR Drink 345 ml"],1200],["Double Treat",["1 Small Pizza 9\"","1 Cheese Stick","1 French Fries","1 Litre Drink"],1950],["Super Saver",["2 Medium Pizza 11\"","10 Pcs Hot Wings","1 French Fries","1.5 Litre Drink"],3400],["Munch Better",["2 Large Pizza 13\"","10 Pcs Hot Wings","1 French Fries","1.5 Litre Drink"],3900],["Family Treat",["1 XL Pizza 16\"","2 French Fries","5 Pcs Nuggets","2 Crunchy Burgers","2 × 1 Litre Drinks"],3850,"Best for family"]];
+const BG=[["Crunchy Burger",300],["Chicken Patty Burger",350],["Jumbo Zinger Burger",400],["Zinger Cheese Burger",450],["Peri Peri Burger",450],["Grill Chicken Burger",500],["Best Tower Burger",700],["Mighty Burger",700]];
+const BD=[["Kiddy Meal",["1 Chicken Patty Burger","1 French Fries","1 NR Drink 345 ml"],500],["Single Funda",["1 Crunchy Burger","1 French Fries","1 NR Drink 345 ml"],500],["Pocket Friend",["2 Crunchy Burgers","1 French Fries","2 NR Drinks 345 ml"],900],["Hunger Grill",["1 Grill Chicken Burger","1 French Fries","1 NR Drink 345 ml"],700],["Cheesy Combo",["1 Cheese Stick","1 French Fries","1 NR Drink 345 ml"],850],["Crispy Lovers",["4 Crunchy Burgers","1 Litre Drink"],1290,"Best value"]];
+const DR=[["1 NR Drink 345 ml",100],["1 Litre Drink",200],["1.5 Litre Drink",220],["Small Mineral Water",60],["Large Mineral Water",110],["Mayo Garlic Dip",60],["Malai Dip",60],["Spicy Dip",60],["Cheese Slice",100]];
+const chip=(l,p)=>`<span class="chip">${l?`<small>${l}</small>`:""}Rs.${p}</span>`;
+const rows=a=>`<div class="list">${a.map(([n,p])=>`<div class="row" data-s="${n.toLowerCase()}"><b>${n}</b><span class="pr">${Array.isArray(p)?p.map(v=>chip(v[0],v[1])).join(""):chip("",p)}</span></div>`).join("")}</div>`;
+const deals=a=>`<div class="cards">${a.map(([n,it,p,b])=>`<div class="card${b?" hot":""}" data-s="${(n+" "+it.join(" ")).toLowerCase()}">${b?`<span class="bd">${b}</span>`:""}<h3>${n}</h3><ul>${it.map(x=>`<li>${x}</li>`).join("")}</ul><div class="big"><small>Rs.</small>${p}</div></div>`).join("")}</div>`;
+const head=(id,e,t,s)=>`<div class="sh"><i>${e}</i><div><h2>${t}</h2><small>${s}</small></div></div>`;
+let h="";
+L.forEach(x=>h+=`<section id="${x.id}" data-sec>${head(x.id,x.e,x.t,x.s)}${rows(x.i)}</section>`);
+h+=`<section id="drinks" data-sec>${head("",'🥤',"Drinks & Dips","Cool down and dip in")}${rows(DR)}</section>`;
+h+=`<section id="pizza" data-sec>${head("","🍕","Pizza","Pick a size to see prices")}<div class="sz" id="sz" role="group" aria-label="Pizza size">${PZ.sizes.map((s,i)=>`<button type="button" data-i="${i}" aria-pressed="${i==1}">${s}</button>`).join("")}</div>
+<h4>Signature flavours</h4><div class="pz sig" id="sig"></div><h4>Traditional flavours</h4><div class="pz" id="trad"></div>
+<h4>Extra topping</h4><div class="tw"><table><tr><th>Topping</th><th>Small</th><th>Medium</th><th>Large</th><th>XL</th></tr><tr><td>Chicken</td><td>150</td><td>180</td><td>220</td><td>350</td></tr><tr><td>Cheese</td><td>150</td><td>180</td><td>220</td><td>350</td></tr><tr><td>Vegetable</td><td>100</td><td>120</td><td>150</td><td>200</td></tr></table></div></section>`;
+h+=`<section id="pizza-deals" data-sec>${head("","🎉","Pizza Deals","Made for sharing")}${deals(PD)}<p class="note">Signature flavours are not included in deals.</p></section>`;
+h+=`<section id="burgers" data-sec>${head("","🍔","Burgers","Stacked high, served hot")}${rows(BG)}</section>`;
+h+=`<section id="burger-deals" data-sec>${head("","🍟","Burger Deals","Burger + fries + drink combos")}${deals(BD)}</section>`;
+const main=document.getElementById("main");main.innerHTML=h;
+const nav=document.getElementById("nav");
+const names={snacks:"Snacks",shawarma:"Shawarma",paratha:"Paratha",drinks:"Drinks",pizza:"Pizza","pizza-deals":"Pizza Deals",burgers:"Burgers","burger-deals":"Burger Deals"};
+nav.innerHTML=Object.keys(names).map(k=>`<a href="#${k}">${names[k]}</a>`).join("");
+let sel=1;
+function pz(){const f=(d,id)=>document.getElementById(id).innerHTML=d[0].map(n=>`<div data-s="${n.toLowerCase()}">${n}${chip("",d[1][sel])}</div>`).join("");f(PZ.sig,"sig");f(PZ.trad,"trad");document.querySelectorAll("#sz button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===sel))}
+document.getElementById("sz").onclick=e=>{const b=e.target.closest("button");if(b){sel=+b.dataset.i;pz()}};pz();
+document.getElementById("q").oninput=e=>{const v=e.target.value.trim().toLowerCase();let any=false;
+document.querySelectorAll("[data-sec]").forEach(s=>{let n=0;s.querySelectorAll("[data-s]").forEach(r=>{const m=!v||r.dataset.s.includes(v)||s.id.includes(v);r.style.display=m?"":"none";if(m)n++});s.style.display=n?"":"none";if(n)any=true});
+document.getElementById("empty").style.display=any?"none":"block"};
+const links=[...nav.querySelectorAll("a")];
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id));const a=links.find(a=>a.classList.contains("on"));if(a)a.scrollIntoView({inline:"center",block:"nearest"})}}),{rootMargin:"-30% 0px -60% 0px"});
+document.querySelectorAll("[data-sec]").forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
